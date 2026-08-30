@@ -77,6 +77,20 @@ public class Main {
 						System.out.println("Entry " + (i+1) + ": ");
 						System.out.println(albumList.get(i).getFullDescription());
 					}	
+				
+					//ADDING SORTING HERE
+					System.out.println("Would you like to sort the list by priority? (Descending) y/n: ");
+					char sorter = input.nextLine().charAt(0);
+					if (sorter == 'y') { //Sort it
+						albumList.sort((a1, a2) -> Integer.compare(a2.getPriority(), a1.getPriority()));
+					
+		            // Printing the sorted list
+		            System.out.println("\n===== SORTED BY PRIORITY (HIGHEST FIRST) =====");
+		            for (int i = 0; i < albumList.size(); i++) {
+		                System.out.println("\nEntry " + (i + 1) + ": ");
+		                System.out.println(albumList.get(i).getFullDescription());
+		            }}
+		            System.out.println("To save this order, use the save function.");
 				}
 			} //end of viewing section
 			
